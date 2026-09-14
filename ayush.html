@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LIDCOHS | AYUSH OPD</title>
+  <meta name="description" content="AYUSH outpatient department at LIDCOHS: Ayurveda (Mon &amp; Thu), Homoeopathy (Tue &amp; Fri), Siddha (Wed &amp; Sat), Naturopathy on Sundays by appointment. 9:30 AM – 1:30 PM." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/jpeg" href="image/logo.jpg" />
+  <style>
+    .system-card .days { color: var(--gold); font-weight: 700; font-size: .9rem; }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <span class="hours">🕒 Mon–Sat 9:30 AM–1:30 PM · Evening OP daily 5:30–9 PM</span>
+      <div class="topbar-right">
+        <a href="tel:+919940279752">📞 +91 99402 79752</a>
+        <a href="https://wa.me/918015995267" target="_blank" rel="noopener">💬 WhatsApp</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="site-header" id="top">
+    <div class="container nav-wrap">
+      <a href="index.html" class="brand">
+        <span class="brand-mark"><img src="image/logo.jpg" alt="LIDCOHS logo" onerror="this.remove()" /></span>
+        <span class="brand-text">
+          <strong>LIDCOHS</strong>
+          <small>Little Drops Composite Health Services</small>
+        </span>
+      </a>
+      <nav class="nav" id="nav">
+        <button class="nav-close" id="navClose" aria-label="Close menu">✕ Close</button>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <div class="dropdown">
+          <button class="nav-link-btn dropdown-toggle" type="button">Services</button>
+          <div class="dropdown-menu">
+            <a href="services.html"><span class="dm-icon">🗂️</span> All Services</a>
+            <a href="ayush.html"><span class="dm-icon">🌿</span> AYUSH OPD</a>
+            <a href="allopathy.html"><span class="dm-icon">🩺</span> Allopathy OPD</a>
+            <a href="physiotherapy.html"><span class="dm-icon">🏃</span> Physiotherapy &amp; Acupuncture</a>
+            <a href="pharmacy.html"><span class="dm-icon">💊</span> Medical Dispensary</a>
+            <a href="laboratory.html"><span class="dm-icon">🔬</span> Thyrocare Lab</a>
+          </div>
+        </div>
+        <a href="timings.html">Timings</a>
+        <a href="community.html">Community</a>
+        <a href="contact.html">Contact</a>
+        <a href="book.html" class="btn btn-primary nav-cta">Book Appointment</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <p class="breadcrumbs"><a href="index.html">Home</a><span class="sep">/</span><a href="services.html">Services</a><span class="sep">/</span>AYUSH OPD</p>
+        <p class="eyebrow">AYUSH Outpatient Department</p>
+        <h1>Ayurveda · Homoeopathy · Siddha · Naturopathy</h1>
+        <p class="lede">
+          Traditional systems of medicine practised by qualified practitioners — available every morning,
+          Monday to Saturday, 9:30 AM – 1:30 PM, with each day dedicated to a specific system.
+        </p>
+        <div class="hero-ctas">
+          <a class="btn btn-gold btn-lg" href="book.html?dept=ayurveda">Book Ayurveda</a>
+          <a class="btn btn-ghost btn-lg" href="book.html?dept=homoeopathy">Book Homoeopathy</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Weekly AYUSH Schedule</p>
+          <h2>Each day, a dedicated system</h2>
+        </div>
+        <div class="grid-2">
+          <div class="card system-card" data-ayush-days="1,4">
+            <div class="card-icon">🌿</div>
+            <h3>Ayurveda</h3>
+            <p class="days">Monday &amp; Thursday · 9:30 AM – 1:30 PM</p>
+            <p>Ancient Indian system focusing on balance of body, mind and daily regimen — diet, lifestyle counselling and herbal treatment as part of holistic care.</p>
+            <a class="btn btn-outline" href="book.html?dept=ayurveda" style="margin-top:.8rem">Book Ayurveda</a>
+          </div>
+          <div class="card system-card" data-ayush-days="2,5">
+            <div class="card-icon">💧</div>
+            <h3>Homoeopathy</h3>
+            <p class="days">Tuesday &amp; Friday · 9:30 AM – 1:30 PM</p>
+            <p>Gentle, individualised consultation considering the person as a whole — commonly chosen for long-term complaints, allergies, skin and lifestyle conditions.</p>
+            <a class="btn btn-outline" href="book.html?dept=homoeopathy" style="margin-top:.8rem">Book Homoeopathy</a>
+          </div>
+          <div class="card system-card" data-ayush-days="3,6">
+            <div class="card-icon">🍃</div>
+            <h3>Siddha</h3>
+            <p class="days">Wednesday &amp; Saturday · 9:30 AM – 1:30 PM</p>
+            <p>The classical Tamil system of medicine, traditionally used for joint care, skin conditions, digestive complaints and general wellbeing.</p>
+            <a class="btn btn-outline" href="book.html?dept=siddha" style="margin-top:.8rem">Book Siddha</a>
+          </div>
+          <div class="card system-card" data-ayush-days="0">
+            <div class="card-icon">☀️</div>
+            <h3>Naturopathy</h3>
+            <p class="days">Sunday · By appointment</p>
+            <p>Drugless approach centred on diet, lifestyle and natural therapies — available on Sundays by prior appointment.</p>
+            <a class="btn btn-outline" href="book.html?dept=naturopathy" style="margin-top:.8rem">Book Naturopathy</a>
+          </div>
+        </div>
+
+        <div class="notice" style="margin-top:2rem">
+          <span class="n-icon">📅</span>
+          <span><strong>Today:</strong> <span id="todaySystem">checking…</span></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-tint">
+      <div class="container split">
+        <div>
+          <p class="eyebrow">The Role of AYUSH</p>
+          <h2>Right system, right situation</h2>
+          <p>
+            AYUSH systems can have an important role in appropriate clinical situations — particularly in
+            supportive care, wellness, rehabilitation and selected chronic or long-term health concerns,
+            depending on the individual patient and condition.
+          </p>
+          <p>
+            Not every system is suitable for every disease. Our practitioners assess first, then guide you
+            towards the appropriate form of care — including referral to modern medicine or a higher centre
+            when required.
+          </p>
+          <a class="btn btn-primary" href="about.html">Read Our Approach</a>
+        </div>
+        <div class="split-media">
+          <img data-probe="image/normal%20photo.jpg" data-icon="🌿" data-cap="At Our Clinic"
+               src="image/normal%20photo.jpg" alt="AYUSH consultation" loading="lazy" />
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <p class="footer-brand">LIDCOHS</p>
+          <p class="footer-sub">Little Drops Composite Health Services</p>
+          <p class="footer-tag">Care Beyond the Cure</p>
+          <p class="footer-note">AYUSH OPD is available Monday to Saturday, 9:30 AM – 1:30 PM. Sunday naturopathy by appointment.</p>
+        </div>
+        <div>
+          <h4>Clinic</h4>
+          <ul>
+            <li><a href="about.html">About LIDCOHS</a></li>
+            <li><a href="timings.html">OP Timings</a></li>
+            <li><a href="community.html">Community Programmes</a></li>
+            <li><a href="contact.html">Contact &amp; Location</a></li>
+            <li><a href="book.html">Book Appointment</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Services</h4>
+          <ul>
+            <li><a href="ayush.html">AYUSH OPD</a></li>
+            <li><a href="allopathy.html">Allopathy OPD</a></li>
+            <li><a href="physiotherapy.html">Physiotherapy &amp; Acupuncture</a></li>
+            <li><a href="pharmacy.html">Medical Dispensary</a></li>
+            <li><a href="laboratory.html">Thyrocare Laboratory</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Visit Us</h4>
+          <ul>
+            <li>No. 14, Easwari Nagar, Near Ibaco,</li>
+            <li>Selaiyur, Tambaram,</li>
+            <li>Chennai – 600073, Tamil Nadu</li>
+            <li><a href="tel:+919940279752">📞 +91 99402 79752</a></li>
+            <li><a href="https://wa.me/918015995267" target="_blank" rel="noopener">💬 +91 80159 95267</a></li>
+            <li><a href="mailto:lidcohsclinic@gmail.com">✉️ lidcohsclinic@gmail.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year">2026</span> LIDCOHS · Little Drops Composite Health Services</span>
+        <span>Multi-Disciplinary Healthcare • Affordable Care • Community Service</span>
+      </div>
+    </div>
+  </footer>
+
+  <a class="wa-float" href="https://wa.me/918015995267?text=Hello%20LIDCOHS%2C%20I%20would%20like%20to%20know%20more%20about%20your%20services."
+     target="_blank" rel="noopener" aria-label="Chat on WhatsApp">💬</a>
+
+  <script src="app.js"></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    // highlight today's AYUSH system + show it in the notice
+    (function () {
+      var map = { 1: "Ayurveda", 2: "Homoeopathy", 3: "Siddha", 4: "Ayurveda", 5: "Homoeopathy", 6: "Siddha", 0: "Naturopathy (by appointment)" };
+      var d = new Date().getDay();
+      var el = document.getElementById("todaySystem");
+      if (el) el.textContent = "Morning AYUSH OP features " + map[d] + " · 9:30 AM – 1:30 PM";
+      document.querySelectorAll(".system-card").forEach(function (c) {
+        if ((c.getAttribute("data-ayush-days") || "").split(",").indexOf(String(d)) !== -1) {
+          c.style.borderColor = "var(--teal-700)";
+          c.style.boxShadow = "0 0 0 3px rgba(18,133,124,.15)";
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
