@@ -1,0 +1,18 @@
+export const services = [
+  { title: "AYUSH OPD", icon: "🌿", badge: "Mon – Sat", teal: true, time: "9:30 AM – 1:30 PM", href: "/ayush", link: "Explore AYUSH →" },
+  { title: "Allopathy OPD", icon: "🩺", badge: "Every Day", teal: true, time: "5:30 PM – 9:00 PM", href: "/allopathy", link: "Explore Allopathy →",
+    short: "Evening consultation for general healthcare, acute illnesses, chronic conditions and appropriate medical management — with referrals when needed.",
+    full: "Evening consultation for general healthcare needs, acute illnesses, chronic conditions and appropriate medical management, with specialist referral when necessary." },
+  { title: "Physiotherapy & Acupuncture", icon: "🏃", badge: "By Appointment", time: "Afternoon sessions", href: "/physiotherapy", link: "Explore Physio →",
+    short: "Rehabilitation, pain management and acupuncture during the afternoon session, by prior appointment.",
+    full: "Rehabilitation, pain management and acupuncture based on prior appointment and patient convenience." },
+  { title: "Medical Dispensary", icon: "💊", badge: "In-House", teal: true, href: "/pharmacy", link: "Pharmacy details →",
+    short: "Prescription-based dispensary for medicines prescribed by qualified healthcare professionals.",
+    full: "Prescription-based dispensary for medicines prescribed by qualified healthcare professionals across all our systems of medicine." },
+  { title: "Thyrocare Laboratory", icon: "🔬", badge: "Partner Facility", href: "/laboratory", link: "Lab tests →",
+    short: "A wide range of lab investigations at competitive prices with applicable discounts.",
+    full: "A wide range of laboratory investigations arranged according to patient requirements, at competitive prices with applicable discounts." },
+  { title: "Doorstep Consultation", icon: "🏠", badge: "On Request", href: "/book?dept=doorstep-consultation", link: "Request a visit →",
+    short: "Guidance, follow-up and referral arranged at home for those who cannot travel — subject to availability.",
+    full: "For those who cannot travel to the clinic — guidance, follow-up and referral arranged at home, subject to availability and prior arrangement." },
+];

@@ -1,6 +1,6 @@
 /* ============================================================
    LIDCOHS — Care Beyond the Cure
-   Premium multi-page design system
+   Original live-site design system, preserved for the Next.js migration.
    ============================================================ */
 
 :root {
@@ -500,6 +500,8 @@ h2 { font-size: clamp(1.65rem, 3.2vw, 2.35rem); margin-bottom: .5rem; }
 }
 
 @media (max-width: 860px) {
+  /* A backdrop-filter contains fixed children; release it while the full-screen menu is open. */
+  .site-header.menu-open { backdrop-filter: none; }
   .topbar .hours { display: none; }
   .hamburger { display: flex; }
   .nav {
@@ -531,4 +533,20 @@ h2 { font-size: clamp(1.65rem, 3.2vw, 2.35rem); margin-bottom: .5rem; }
   .form-card { padding: 1.4rem 1.2rem; }
   .footer-grid { grid-template-columns: 1fr; gap: 1.4rem; }
   .fact-float { left: 8px; bottom: 12px; }
+}
+
+/* AYUSH's original page-specific styles. */
+.system-card .days { color: var(--gold); font-weight: 700; font-size: .9rem; }
+.system-card.is-today { border-color: var(--teal-700); box-shadow: 0 0 0 3px rgba(18,133,124,.15); }
+
+/* Let the existing pill buttons fit the narrowest phones without clipping. */
+@media (max-width: 360px) {
+  .btn { max-width: 100%; white-space: normal; text-align: center; }
+}
+
+/* Progressive enhancement: content stays readable without JavaScript. */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .reveal { opacity: 1; transform: none; }
 }

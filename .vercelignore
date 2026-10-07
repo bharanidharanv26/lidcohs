@@ -2,3 +2,7 @@
 .vercel
 .env.local
 .gitignore
+.freebuff
+test-results
+playwright-report
+tests
