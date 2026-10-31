@@ -67,9 +67,6 @@ src/
     metadata.ts           Page metadata helper
 public/
   image/                  Original clinic photos and logo
-tests/
-  e2e/                    Routes, mobile navigation, forms, schedules, image fallback
-  reference/              Live-site content/layout comparison and screenshots
 ```
 
 Static page content uses server components; interactive features use focused client components. Internal navigation uses Next.js `Link`.
@@ -95,25 +92,11 @@ These are client-side handoffs. No booking data is persisted or sent to an appli
 
 ## Verification
 
-Build first, then run the browser checks. Playwright starts the production server automatically when needed.
-
 ```bash
-npx playwright install chromium
+npm run lint
+npm run typecheck
 npm run build
-npm run test:e2e
 ```
-
-The suite covers all routes at 1440px, 900px, 390px, and 320px, `.html` redirects, department preselection, WhatsApp and email handoffs, form validation, FAQ, menu behavior, schedule highlights, and image loading/fallback. Messages are intercepted during tests; nothing is sent to the clinic.
-
-To compare against the original live site while that version is still deployed:
-
-```bash
-npm run test:reference
-```
-
-This compares all 12 pages at desktop, tablet, and mobile sizes: page text, metadata, images, and section geometry (2px tolerance). It also saves `live.png` and `next.png` full-page screenshots under `test-results/reference/`. Both pages use the same fixed date and timezone. The third-party Google map is blanked in both test contexts to avoid network-dependent differences; the application retains the original embed URL.
-
-The reference suite requires internet access. Once the migrated site replaces the original at `lidcohs.vercel.app`, set `LIDCOHS_REFERENCE_URL` to an archived legacy deployment URL instead. Generated test artifacts are ignored by Git.
 
 Small functional repairs preserve the intended experience: all department links preselect correctly, images that fail before React hydrates still show their fallback, and the existing mobile menu fills the viewport instead of being clipped by the sticky header's backdrop filter. Long button labels wrap on phones 360px and narrower. The menu also supports Escape and keyboard focus management; reduced-motion preferences are respected.
 
