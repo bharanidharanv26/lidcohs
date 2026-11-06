@@ -1,14 +1,14 @@
 import { ClinicPhoto } from "@/components/clinic-photo";
-import { ButtonLink, CardGrid, PageHero, Section, SectionHeading } from "@/components/ui";
+import { ButtonLink, CardGrid, Notice, PageHero, Section, SectionHeading } from "@/components/ui";
 import { pageMetadata } from "@/lib/metadata";
 import { clinic } from "@/lib/site";
 
-export const metadata = pageMetadata("Medical Dispensary", "LIDCOHS Medical Dispensary provides prescription-based medicines prescribed by qualified healthcare professionals — in-house for all systems of medicine practised at the clinic.", "/pharmacy");
+export const metadata = pageMetadata("Medical Dispensary", "LIDCOHS Medical Dispensary provides prescription-based medicines prescribed by qualified healthcare professionals — in-house for all systems of medicine practised at the clinic. Please call ahead to confirm availability.", "/pharmacy");
 
 export default function PharmacyPage() {
   return <>
     <PageHero breadcrumb="Medical Dispensary" service eyebrow="LIDCOHS Medical Dispensary" title="Prescription-Based Medical Dispensary" actions={<><ButtonLink variant="gold" large href="/contact">Visit the Dispensary</ButtonLink><ButtonLink variant="ghost" large href={clinic.phoneHref}>Check Medicine Availability</ButtonLink></>}>
-      Medicines dispensed only against prescriptions from qualified healthcare professionals — conveniently located inside the clinic, serving all systems of medicine practised here.
+      Medicines dispensed only against prescriptions from qualified healthcare professionals — conveniently located inside the clinic, serving all systems of medicine practised here. Please call or WhatsApp ahead to confirm medicine availability.
     </PageHero>
     <Section containerClass="split"><div>
       <p className="eyebrow">How It Works</p><h2>Safe, simple and transparent</h2>
@@ -25,6 +25,7 @@ export default function PharmacyPage() {
         { icon: "🌿", title: "All Systems Covered", text: "Medicines relating to the systems practised at LIDCOHS — Allopathy, Ayurveda, Homoeopathy and Siddha — as available." },
         { icon: "📞", title: "Availability Check", text: "Call ahead to check stock for continued medication so your refills are never interrupted." },
       ]} />
+      <Notice icon="📞" style={{ marginTop: "1.8rem" }}>Please call ahead before visiting the dispensary so we can confirm medicine availability. Medicines are dispensed only against valid prescriptions.</Notice>
     </Section>
   </>;
 }

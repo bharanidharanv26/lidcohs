@@ -1,18 +1,23 @@
-export const services = [
-  { title: "AYUSH OPD", icon: "🌿", badge: "Mon – Sat", teal: true, time: "9:30 AM – 1:30 PM", href: "/ayush", link: "Explore AYUSH →" },
-  { title: "Allopathy OPD", icon: "🩺", badge: "Every Day", teal: true, time: "5:30 PM – 9:00 PM", href: "/allopathy", link: "Explore Allopathy →",
-    short: "Evening consultation for general healthcare, acute illnesses, chronic conditions and appropriate medical management — with referrals when needed.",
-    full: "Evening consultation for general healthcare needs, acute illnesses, chronic conditions and appropriate medical management, with specialist referral when necessary." },
-  { title: "Physiotherapy & Acupuncture", icon: "🏃", badge: "By Appointment", time: "Afternoon sessions", href: "/physiotherapy", link: "Explore Physio →",
-    short: "Rehabilitation, pain management and acupuncture during the afternoon session, by prior appointment.",
-    full: "Rehabilitation, pain management and acupuncture based on prior appointment and patient convenience." },
+import { careServices } from "@/lib/care-services";
+
+type ServiceSummary = {
+  title: string; icon: string; badge: string; teal?: boolean; time?: string; days?: string;
+  href: string; link: string; short: string; full: string;
+};
+
+export const services: ServiceSummary[] = [
+  ...Object.values(careServices).map((service) => ({
+    title: service.name, icon: service.icon, badge: service.badge, teal: true,
+    time: service.time, days: service.days, href: `/${service.slug}`, link: `Explore ${service.name} →`,
+    short: service.description, full: service.description,
+  })),
   { title: "Medical Dispensary", icon: "💊", badge: "In-House", teal: true, href: "/pharmacy", link: "Pharmacy details →",
-    short: "Prescription-based dispensary for medicines prescribed by qualified healthcare professionals.",
-    full: "Prescription-based dispensary for medicines prescribed by qualified healthcare professionals across all our systems of medicine." },
-  { title: "Thyrocare Laboratory", icon: "🔬", badge: "Partner Facility", href: "/laboratory", link: "Lab tests →",
-    short: "A wide range of lab investigations at competitive prices with applicable discounts.",
-    full: "A wide range of laboratory investigations arranged according to patient requirements, at competitive prices with applicable discounts." },
-  { title: "Doorstep Consultation", icon: "🏠", badge: "On Request", href: "/book?dept=doorstep-consultation", link: "Request a visit →",
+    short: "Prescription-based dispensary for medicines prescribed by qualified healthcare professionals. Call ahead to confirm stock.",
+    full: "Prescription-based dispensary for medicines prescribed by qualified healthcare professionals across all our systems of medicine. Please call ahead to confirm medicine availability before visiting." },
+  { title: "Laboratory", icon: "🔬", badge: "Partner Facility", days: "By prior appointment", time: "Sample collection time confirmed when booking", href: "/laboratory", link: "Lab tests →",
+    short: "A wide range of lab investigations at competitive prices with applicable discounts — by prior appointment.",
+    full: "A wide range of laboratory investigations arranged according to patient requirements, at competitive prices with applicable discounts. Tests and sample collection are by prior appointment." },
+  { title: "Doorstep Consultation", icon: "🏠", badge: "On Request", days: "By prior arrangement", href: "/book?dept=doorstep-consultation", link: "Request a visit →",
     short: "Guidance, follow-up and referral arranged at home for those who cannot travel — subject to availability.",
     full: "For those who cannot travel to the clinic — guidance, follow-up and referral arranged at home, subject to availability and prior arrangement." },
 ];

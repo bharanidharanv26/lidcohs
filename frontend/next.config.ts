@@ -1,6 +1,6 @@
 import type { NextConfig } from "next";
 
-const pages = ["about", "services", "ayush", "allopathy", "physiotherapy", "pharmacy", "laboratory", "community", "timings", "contact", "book"];
+const pages = ["about", "services", "ayush", "allopathy", "ayurveda", "homoeopathy", "siddha", "naturopathy", "physiotherapy", "acupuncture", "pharmacy", "laboratory", "community", "timings", "contact", "book"];
 
 const nextConfig: NextConfig = {
   async redirects() {

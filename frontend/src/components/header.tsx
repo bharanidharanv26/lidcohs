@@ -48,7 +48,7 @@ export function Header() {
 
   return <>
     <div className="topbar"><div className="container topbar-inner">
-      <span className="hours">🕒 Mon–Sat 9:30 AM–1:30 PM · Evening OP daily 5:30–9 PM</span>
+      <span className="hours">🕒 Ayurveda Mon &amp; Fri · Siddha Tue &amp; Thu · Homoeopathy Wed &amp; Sat · Others by appointment</span>
       <div className="topbar-right"><a href={clinic.phoneHref}>📞 {clinic.phone}</a><a href={whatsappLink()} target="_blank" rel="noopener">💬 WhatsApp</a></div>
     </div></div>
     <header className={`site-header${menuOpen ? " menu-open" : ""}`} id="top"><div className="container nav-wrap">

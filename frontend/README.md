@@ -22,7 +22,7 @@ npm run build
 npm start
 ```
 
-All 12 pages are prerendered. Date-dependent UI and forms hydrate in the browser. No environment variables or external service credentials are required.
+All 17 pages are prerendered. Date-dependent UI and forms hydrate in the browser. No environment variables or external service credentials are required.
 
 ## Routes
 
@@ -31,11 +31,16 @@ All 12 pages are prerendered. Date-dependent UI and forms hydrate in the browser
 | `/` | Home |
 | `/about` | Vision, approach, and doorstep consultation |
 | `/services` | All services |
-| `/ayush` | Ayurveda, Homoeopathy, Siddha, and Naturopathy |
-| `/allopathy` | Evening OPD |
-| `/physiotherapy` | Physiotherapy and Acupuncture |
+| `/ayush` | AYUSH overview and links to each system |
+| `/allopathy` | Allopathy consultations by prior appointment |
+| `/ayurveda` | Ayurveda conditions, consultation days, booking, and directions |
+| `/homoeopathy` | Homoeopathy conditions, consultation days, booking, and directions |
+| `/siddha` | Siddha conditions, consultation days, booking, and directions |
+| `/naturopathy` | Naturopathy by prior appointment |
+| `/physiotherapy` | Physiotherapy and rehabilitation |
+| `/acupuncture` | Acupuncture by prior appointment |
 | `/pharmacy` | Medical Dispensary |
-| `/laboratory` | Thyrocare Laboratory |
+| `/laboratory` | Laboratory |
 | `/timings` | Today's and weekly schedules |
 | `/community` | Sunday community programmes |
 | `/contact` | Contact details, map, enquiry form, and FAQ |
@@ -52,7 +57,8 @@ src/
     header.tsx            Shared navigation, Services dropdown, mobile menu
     footer.tsx            Shared footer with original page-specific notes
     ui.tsx                Buttons, cards, sections, heroes, notices, shared content
-    service-grid.tsx      Home and Services cards with their original wording
+    service-grid.tsx      Individual service cards on Home and Services
+    service-detail.tsx    Shared service overview, schedule, booking, and directions
     schedule.tsx          Daily card, weekly timetable, AYUSH highlights
     booking-form.tsx      Appointment form and validation
     enquiry-form.tsx      Contact form
@@ -61,7 +67,9 @@ src/
   lib/
     site.ts               Clinic details, navigation, footer text
     services.ts           Service overview content
-    schedule.ts           Weekly schedule and AYUSH content
+    care-services.ts      Seven services, descriptions, days, timings, and booking slugs
+    schedule.ts           Weekly schedule and AYUSH consultation days
+    treatments.ts         Grouped Ayurveda, Homoeopathy, Siddha, and Allopathy content
     booking.ts            Department slugs and appointment message formatting
     use-today.ts          Hydration-safe local date, refreshed while open
     metadata.ts           Page metadata helper
@@ -75,10 +83,10 @@ Static page content uses server components; interactive features use focused cli
 
 - Edit page-specific wording in `src/app/<route>/page.tsx`.
 - Edit clinic contact details in `src/lib/site.ts`.
-- Edit recurring service content in `src/lib/services.ts` and schedules in `src/lib/schedule.ts`.
+- Edit individual service descriptions and availability in `src/lib/care-services.ts`, supporting services in `src/lib/services.ts`, condition lists in `src/lib/treatments.ts`, and daily schedule assignments in `src/lib/schedule.ts`.
 - Photos retain their existing `/image/...` URLs and CSS cropping. Files are now in `public/image/`.
 - The two gallery placeholders are intentional reproductions of the live site. To fill them, add the real photos to `public/image/gallery/` and replace the corresponding placeholder figures in `src/app/page.tsx` with `ClinicPhoto` components.
-- Existing text about Allopathy being available “every day” and the timetable's Sunday closure are both preserved from the source. Confirm the clinic's actual Sunday hours before a future content update.
+- Availability is fixed for Ayurveda (Monday & Friday), Siddha (Tuesday & Thursday) and Homoeopathy (Wednesday & Saturday), 9:30 AM – 1:30 PM. Allopathy, naturopathy, physiotherapy, acupuncture, laboratory services and doorstep visits are by prior appointment. Sunday community programmes continue 10:00 AM – 1:00 PM.
 
 ## Appointment and enquiry behavior
 

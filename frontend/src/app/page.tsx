@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Fragment } from "react";
 import { ClinicPhoto } from "@/components/clinic-photo";
 import { ServiceGrid } from "@/components/service-grid";
 import { TodayCard, WeekTable } from "@/components/schedule";
 import { ButtonLink, CardGrid, CheckList, FlowStrip, MiniCard, PatientPhilosophy, Section, SectionHeading } from "@/components/ui";
 import { clinic } from "@/lib/site";
+import { careServices } from "@/lib/care-services";
 
 export const metadata: Metadata = { alternates: { canonical: "/" } };
 
@@ -20,7 +22,11 @@ export default function HomePage() {
           <ButtonLink variant="outline" large href={clinic.phoneHref}>Call&nbsp;Us</ButtonLink>
           <ButtonLink variant="outline" large href={clinic.directions} target="_blank" rel="noopener">Directions</ButtonLink>
         </div>
-        <div className="hero-chips">{["🩺 Allopathy", "🌿 Ayurveda", "💧 Homoeopathy", "🍃 Siddha", "☀️ Naturopathy", "🏃 Physiotherapy", "📍 Acupuncture"].map((chip) => <span key={chip}>{chip}</span>)}</div>
+        <div className="hero-chips">
+          {Object.values(careServices).map((service) => <Link key={service.slug} href={`/${service.slug}`}><span aria-hidden="true">{service.icon}</span> {service.name}</Link>)}
+          <Link href="/laboratory"><span aria-hidden="true">🔬</span> Laboratory</Link>
+          <Link href="/pharmacy"><span aria-hidden="true">💊</span> Medical Dispensary</Link>
+        </div>
       </div>
       <div className="hero-visual">
         <ClinicPhoto variant="hero-photo" id="heroPhotoWrap" src="/image/clinic%20front.jpg" alt="LIDCOHS clinic front" icon="🏠" caption="Our Clinic" priority />
